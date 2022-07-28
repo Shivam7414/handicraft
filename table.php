@@ -201,7 +201,7 @@ require_once("./config/connection.php");
 
     .product .popup-card .info p {
       font-size: 15px;
-      
+
     }
 
     .product .popup-card .info .price {
@@ -341,6 +341,7 @@ require_once("./config/connection.php");
       margin: auto;
       color: #EADDD0;
     }
+
     .Bar-Table {
       font-family: 'Cormorant SC', serif;
       text-transform: uppercase;
@@ -349,13 +350,15 @@ require_once("./config/connection.php");
       color: #BA8C63;
       position: relative;
     }
-    .Table-line{
+
+    .Table-line {
       position: relative;
       width: 500px;
       margin: auto;
       color: #EADDD0;
     }
-    .error{
+
+    .error {
       color: #BA8C63;
     }
 
@@ -377,9 +380,11 @@ require_once("./config/connection.php");
         top: 150px;
       }
     }
-    .table{
+
+    .table {
       margin-top: 50px;
     }
+
     @media screen and (max-width: 550px) {
       .line {
         top: 147px;
@@ -397,10 +402,12 @@ require_once("./config/connection.php");
         top: 155px;
         width: 400px;
       }
-      .Bar-Table{
+
+      .Bar-Table {
         font-size: 2rem;
       }
-      .Table-line{
+
+      .Table-line {
         width: 400px;
       }
 
@@ -417,89 +424,89 @@ require_once("./config/connection.php");
 
   <div class="product-container">
 
-   <div class="container" >
-    <?php
-    $query="SELECT  * from item where product_id=1";
-    $query_run=mysqli_query($conn,$query);
-    $fetch_data=mysqli_num_rows($query_run)>0;
-    if ($fetch_data){
-        while($row=mysqli_fetch_assoc($query_run)){
-           
-            ?>
-      <div class="product">
-        <div class="product-card">
-          <h2 class="name"><?php echo $row['item_name'] ?></h2>
-          <a class="popup-btn">Quick View</a>
-           <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
-        </div>
-        <div class="popup-view">
-          <div class="popup-card">
-            <a><i class="fas fa-times close-btn"></i></a>
-            <div class="product-img">
-              <img src="pexels-life-of-pix-67468.jpg" alt="">
+    <div class="container">
+      <?php
+      $query = "SELECT  * from item where product_id=1";
+      $query_run = mysqli_query($conn, $query);
+      $fetch_data = mysqli_num_rows($query_run) > 0;
+      if ($fetch_data) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+
+      ?>
+          <div class="product">
+            <div class="product-card">
+              <h2 class="name"><?php echo $row['item_name'] ?></h2>
+              <a class="popup-btn">Quick View</a>
+              <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
             </div>
-            <div class="info">
-              <h2><?php echo $row['item_name'] ?></h2>
-              <h2><span>Description</span></h2>
-              <p> <?php echo $row['item_desc'] ?></p>
-              <h2><span>Size</span></h2>
-              <p><?php echo $row['item_size'] ?></p>
+            <div class="popup-view">
+              <div class="popup-card">
+                <a><i class="fas fa-times close-btn"></i></a>
+                <div class="product-img">
+                  <img src="pexels-life-of-pix-67468.jpg" alt="">
+                </div>
+                <div class="info">
+                  <h2><?php echo $row['item_name'] ?></h2>
+                  <h2><span>Description</span></h2>
+                  <p> <?php echo $row['item_desc'] ?></p>
+                  <h2><span>Size</span></h2>
+                  <p><?php echo $row['item_size'] ?></p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
       <?php
         }
       }
-      if(mysqli_num_rows($query_run)==0){
+      if (mysqli_num_rows($query_run) == 0) {
         echo "<h1 class='error'> No result found</h1>";
       }
       ?>
-   
+
     </div>
 
 
   </div>
   <p class="Bar-Table" id="bar-table">Bar table</p>
   <hr class="Table-line">
-  <div class="product-container table"  >
+  <div class="product-container table">
 
-    <div class="container" >
-     
-    <?php
-    $query="SELECT  * from item where product_id=2";
-    $query_run=mysqli_query($conn,$query);
-    $fetch_data=mysqli_num_rows($query_run)>0;
-    if ($fetch_data){
-        while($row=mysqli_fetch_assoc($query_run)){
-           
-            ?>
-      <div class="product">
-        <div class="product-card">
-          <h2 class="name"><?php echo $row['item_name'] ?></h2>
-          <a class="popup-btn">Quick View</a>
-           <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
-        </div>
-        <div class="popup-view">
-          <div class="popup-card">
-            <a><i class="fas fa-times close-btn"></i></a>
-            <div class="product-img">
-              <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
+    <div class="container">
+
+      <?php
+      $query = "SELECT  * from item where product_id=2";
+      $query_run = mysqli_query($conn, $query);
+      $fetch_data = mysqli_num_rows($query_run) > 0;
+      if ($fetch_data) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+
+      ?>
+          <div class="product">
+            <div class="product-card">
+              <h2 class="name"><?php echo $row['item_name'] ?></h2>
+              <a class="popup-btn">Quick View</a>
+              <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
             </div>
-            <div class="info">
-              <h2><?php echo $row['item_name'] ?></h2>
-              <h2><span>Description</span></h2>
-              <p> <?php echo $row['item_desc'] ?></p>
-              <h2><span>Size</span></h2>
-              <p><?php echo $row['item_size'] ?></p>
+            <div class="popup-view">
+              <div class="popup-card">
+                <a><i class="fas fa-times close-btn"></i></a>
+                <div class="product-img">
+                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
+                </div>
+                <div class="info">
+                  <h2><?php echo $row['item_name'] ?></h2>
+                  <h2><span>Description</span></h2>
+                  <p> <?php echo $row['item_desc'] ?></p>
+                  <h2><span>Size</span></h2>
+                  <p><?php echo $row['item_size'] ?></p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
       <?php
         }
       }
-      if(mysqli_num_rows($query_run)==0){
+      if (mysqli_num_rows($query_run) == 0) {
         echo "<h1 class='error'> No result found</h1>";
       }
       ?>
@@ -512,40 +519,40 @@ require_once("./config/connection.php");
   <div class="product-container  table">
 
     <div class="container" id="dining-table">
-    <?php
-    $query="SELECT  * from item where product_id=3";
-    $query_run=mysqli_query($conn,$query);
-    $fetch_data=mysqli_num_rows($query_run)>0;
-    if ($fetch_data){
-        while($row=mysqli_fetch_assoc($query_run)){
-           
-            ?>
-      <div class="product">
-        <div class="product-card">
-          <h2 class="name"><?php echo $row['item_name'] ?></h2>
-          <a class="popup-btn">Quick View</a>
-           <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
-        </div>
-        <div class="popup-view">
-          <div class="popup-card">
-            <a><i class="fas fa-times close-btn"></i></a>
-            <div class="product-img">
-              <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
+      <?php
+      $query = "SELECT  * from item where product_id=3";
+      $query_run = mysqli_query($conn, $query);
+      $fetch_data = mysqli_num_rows($query_run) > 0;
+      if ($fetch_data) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+
+      ?>
+          <div class="product">
+            <div class="product-card">
+              <h2 class="name"><?php echo $row['item_name'] ?></h2>
+              <a class="popup-btn">Quick View</a>
+              <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
             </div>
-            <div class="info">
-              <h2><?php echo $row['item_name'] ?></h2>
-              <h2><span>Description</span></h2>
-              <p> <?php echo $row['item_desc'] ?></p>
-              <h2><span>Size</span></h2>
-              <p><?php echo $row['item_size'] ?></p>
+            <div class="popup-view">
+              <div class="popup-card">
+                <a><i class="fas fa-times close-btn"></i></a>
+                <div class="product-img">
+                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
+                </div>
+                <div class="info">
+                  <h2><?php echo $row['item_name'] ?></h2>
+                  <h2><span>Description</span></h2>
+                  <p> <?php echo $row['item_desc'] ?></p>
+                  <h2><span>Size</span></h2>
+                  <p><?php echo $row['item_size'] ?></p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
       <?php
         }
       }
-      if(mysqli_num_rows($query_run)==0){
+      if (mysqli_num_rows($query_run) == 0) {
         echo "<h1 class='error'> No result found</h1>";
       }
       ?>

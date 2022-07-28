@@ -79,7 +79,7 @@
         .home {
             width: 100%;
             height: 25vh;
-            background-image: url(pexels-pixabay-326333.jpg);
+            background-image: url(img/pexels-pixabay-326333.jpg);
             background-color: #F1E8E0;
             background-position: center top;
             background-size: cover;
@@ -396,7 +396,7 @@
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
                     <li><a href="addproduct.php">Add Product</a></li>
-                    <li><a href="#">Update Product</a></li>
+                    <li><a href="updateproduct.php">Update Product</a></li>
                     <li><a href="#">Add Slider</a></li>
                     <li><a href="#">Add Recent </a></li>
                 </ul>
