@@ -1,3 +1,7 @@
+<?php
+require_once("config/connection.php");
+
+?>
 <html>
 
 <head>
@@ -21,7 +25,6 @@
     .product-title {
       margin-top: 20px;
       text-align: center;
-      padding-left: 30px;
       color: #BA8C63;
       font-size: 2rem;
       margin-bottom: 20px;
@@ -130,6 +133,7 @@
       color: #ffffff;
       padding: 0.8rem;
       font-size: 14px;
+      text-align: center;
       text-transform: uppercase;
       border-radius: 4px;
       font-weight: 400;
@@ -212,83 +216,41 @@
   <div class="main-content">
     <p class="title">Our Products</p>
     <p class="line"></p>
-
-
+<?php
+      $query = "SELECT  * from item INNER JOIN category ON item.product_id=category.category_id ORDER BY `item_id` DESC LIMIT 2";
+      $query_run = mysqli_query($conn, $query);
+      $fetch_data = mysqli_num_rows($query_run) > 0;
+      if ($fetch_data) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+          
+      ?>
     <div class="main">
-      <p class="product-title">Tables</p>
+  
+      <p class="product-title"><?php echo $row['category_name'] ?></p>
       <ul class="cards">
         <li class="cards_item">
           <div class="card">
-            <div class="card_image"><img src="table/pexels-pixabay-271696.jpg"></div>
+            <div class="card_image"><img src="products-img-upload/<?php echo $row['item_image'] ?>"></div>
             <div class="card_content">
-              <h2 class="card_title">Dining Table</h2>
-
-              <button class="btn card_btn">view More</button>
-            </div>
-          </div>
-        </li>
-      
-        <li class="cards_item">
-          <div class="card">
-            <div class="card_image"><img src="table/pexels-rachel-claire-5865378.jpg"></div>
-            <div class="card_content">
-              <h2 class="card_title">Counter Table</h2>
-
-              <button class="btn card_btn">view More</button>
-            </div>
-          </div>
-        </li>
-        <li class="cards_item">
-          <div class="card">
-            <div class="card_image"><img src="table/pexels-roberto-nickson-7258844.jpg"></div>
-            <div class="card_content">
-              <h2 class="card_title">Bar Table</h2>
-
-              <button class="btn card_btn">view More</button>
+              <h2 class="card_title"><?php echo $row['item_name'] ?></h2>
+              <?php
+              $product_id=$row['product_id'];
+                $link = mysqli_query($conn, "SELECT * FROM `item_link` WHERE link_id = '$product_id'") or die('query failed');
+                if (mysqli_num_rows($link) > 0) {
+                  $fetch_link = mysqli_fetch_assoc($link);
+                }
+              ?>
+              <a  href="<?php echo $fetch_link['item_link'] ?>" class="btn card_btn">view More</a>
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="main">
-      <p class="product-title">Chairs</p>
-      <ul class="cards">
-        <li class="cards_item">
-          <div class="card">
-            <div class="card_image"><img src="Chairs/pexels-max-vakhtbovych-6283972.jpg"></div>
-            <div class="card_content">
-              <h2 class="card_title">Counter Chair</h2>
-
-              <button class="btn card_btn">view More</button>
-            </div>
-          </div>
-        </li>
-      
-        <li class="cards_item">
-          <div class="card">
-            <div class="card_image"><img src="Chairs/pexels-charlotte-may-5824521.jpg"></div>
-            <div class="card_content">
-              <h2 class="card_title"> Dining Chair</h2>
-
-              <button class="btn card_btn">view More</button>
-            </div>
-          </div>
-        </li>
-        <li class="cards_item">
-          <div class="card">
-            <div class="card_image"><img src="Chairs/pexels-chan-walrus-941861.jpg"></div>
-            <div class="card_content">
-              <h2 class="card_title">Bar Chair</h2>
-
-              <button class="btn card_btn">view More</button>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <?php
+        }
+      }
+      ?>
   </div>
-
-
 </body>
 
 </html>

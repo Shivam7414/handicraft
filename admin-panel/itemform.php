@@ -2,66 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #F1E8E0;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F1E8E0;
+    }
 
-        .info-box {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 70px;
-            line-height: 30px;
-        }
+    .info-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px;
+      line-height: 30px;
+    }
 
-        .mb-3 {
-            margin-bottom: 2rem !important;
-        }
+    .mb-3 {
+      margin-bottom: 2rem !important;
+    }
 
-        .information-form {
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-            padding: 50px;
-        }
+    .information-form {
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+      padding: 50px;
+    }
 
-        .btn {
-            width: 100vh;
-            margin: auto;
-        }
+    .btn {
+      width: 100vh;
+      margin: auto;
+    }
 
-        @media screen and (max-width:1008px) {
-            .info-box {
-                padding: 50px;
-            }
-        }
+    @media screen and (max-width:1008px) {
+      .info-box {
+        padding: 50px;
+      }
+    }
 
-        @media screen and (max-width:750px) {
-            .info-box {
-                padding: 70px;
-            }
-        }
+    @media screen and (max-width:750px) {
+      .info-box {
+        padding: 70px;
+      }
+    }
 
-        @media screen and (max-width: 640px) {
-            .info-box {
-                padding: 20px;
-            }
+    @media screen and (max-width: 640px) {
+      .info-box {
+        padding: 20px;
+      }
 
-            .product-title {
-                margin-bottom: 30px;
-            }
-        }
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+      .product-title {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
 <body>
-<div class="info-box">
+  <div class="info-box">
     <form class="row g-3 needs-validation information-form" action="addproductcode.php" method="post" enctype="multipart/form-data" novalidate>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Product Title</label>

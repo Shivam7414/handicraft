@@ -1,7 +1,8 @@
 <html>
-  <head>
-    <style>
-.mySlides {
+
+<head>
+  <style>
+    .mySlides {
       display: none
     }
 
@@ -141,22 +142,30 @@
         }
       }
     }
-    </style>
-  </head>
-  <body>
+  </style>
+</head>
+
+<body>
+<?php
+    require_once("config/connection.php");
+     $select = mysqli_query($conn, "SELECT * FROM `slider` WHERE slider_id = 1") or die('query failed');
+     if (mysqli_num_rows($select) > 0) {
+       $fetch = mysqli_fetch_assoc($select);
+     }
+   ?>
   <div class="slider">
     <div class="slideshow-container">
       <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
-        <img src="pexels-charl-durand-6684896.jpg" style="width:100%" class="slider-image">    
+        <img src="sliderimage/<?php echo $fetch['image1'] ?>" style="width:100%" class="slider-image">
       </div>
       <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
-        <img src="pexels-life-of-pix-67468.jpg" style="width:100%" class="slider-image">       
+        <img src="sliderimage/<?php echo $fetch['image2'] ?>" style="width:100%" class="slider-image">
       </div>
       <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
-        <img src="pexels-pixabay-416320 (1).jpg" style="width:100%" class="slider-image">        
+        <img src="sliderimage/<?php echo $fetch['image3'] ?>" style="width:100%" class="slider-image">
       </div>
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -215,8 +224,9 @@
         slideIndex = 1
       }
       slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 8000); // Change image every 2 seconds
+      setTimeout(showSlides, 6000); // Change image every 2 seconds
     }
   </script>
-  </body>
+</body>
+
 </html>

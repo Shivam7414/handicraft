@@ -8,11 +8,6 @@
     <style>
         @import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700");
 
-        /*-- Inspiration taken from abdo steif -->
-/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
-
-        /* Navbar section */
-
         .nav {
             width: 100%;
             height: 65px;
@@ -20,7 +15,8 @@
             line-height: 65px;
             text-align: center;
         }
-        .container{
+
+        .container {
             font-family: "Quicksand", sans-serif;
             box-sizing: border-box;
         }
@@ -395,10 +391,11 @@
         <div class="container">
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
+                    <li><a href="#">Dashboard</a></li>
                     <li><a href="addproduct.php">Add Product</a></li>
-                    <li><a href="updateproduct.php">Update Product</a></li>
-                    <li><a href="#">Add Slider</a></li>
-                    <li><a href="#">Add Recent </a></li>
+                    <li><a href="view.php">View Product</a></li>
+                    <li><a href="slider.php">Add Slider</a></li>
+
                 </ul>
             </div>
             <span class="navTrigger">

@@ -71,7 +71,6 @@ if (isset($_POST['getvalue'])){
                 <tr>
                     <th scope="col">Product Title</th>
                     <th scope="col">Product Type</th>
-                    <th scope="col">Update</th>
                     <th scope="col">Delete</th>
                 </tr>
             </thead>
@@ -118,8 +117,7 @@ if (isset($_POST['getvalue'])){
                                 echo "Bed";
                             }
                             ?></td>                       
-                            <td><a class="btn btn-primary" href="itemupdate.php?itemid=<?php echo $row['item_id']; ?>" role="button">Update</a></td>
-                            <td><a class="btn btn-primary" href="deleteproduct.php?itemid=<?php echo $row['item_id']; ?>" role="button">Delete</a></td>
+                            <td><a class="btn btn-primary" onclick="return confirm('Are you sure?')" href="deleteproduct.php?itemid=<?php echo $row['item_id']; ?>" role="button">Delete</a></td>
                         </tr>
                 <?php
                     }

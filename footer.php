@@ -467,7 +467,7 @@
       <div class="footer-copyright">
         <div class="footer-copyright-wrapper">
           <p class="footer-copyright-text">
-            <a class="footer-copyright-link" href="#" target="_self"> ©2022. | Designed By: SHIVAM KUMAR | All rights
+            <a class="footer-copyright-link" href="#" target="_self"> ©2022-23. | All rights
               reserved. </a>
           </p>
         </div>

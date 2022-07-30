@@ -443,7 +443,7 @@ require_once("./config/connection.php");
               <div class="popup-card">
                 <a><i class="fas fa-times close-btn"></i></a>
                 <div class="product-img">
-                  <img src="pexels-life-of-pix-67468.jpg" alt="">
+                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
                 </div>
                 <div class="info">
                   <h2><?php echo $row['item_name'] ?></h2>
