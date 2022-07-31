@@ -216,40 +216,53 @@ require_once("config/connection.php");
   <div class="main-content">
     <p class="title">Our Products</p>
     <p class="line"></p>
-<?php
-      $query = "SELECT  * from item INNER JOIN category ON item.category_id=category.category_id ORDER BY `item_id` DESC LIMIT 3";
-      $query_run = mysqli_query($conn, $query);
-      $fetch_data = mysqli_num_rows($query_run) > 0;
-      if ($fetch_data) {
-        while ($row = mysqli_fetch_assoc($query_run)) {
-          
-      ?>
+
     <div class="main">
-  
-      <p class="product-title"><?php echo $row['category_name'] ?></p>
-      <ul class="cards">
-        <li class="cards_item">
-          <div class="card">
-            <div class="card_image"><img src="products-img-upload/<?php echo $row['item_image'] ?>"></div>
-            <div class="card_content">
-              <h2 class="card_title"><?php echo $row['item_name'] ?></h2>
-              <?php
-              $product_id=$row['category_id'];
-                $link = mysqli_query($conn, "SELECT * FROM `item_link` WHERE link_id = '$product_id'") or die('query failed');
-                if (mysqli_num_rows($link) > 0) {
-                  $fetch_link = mysqli_fetch_assoc($link);
-                }
-              ?>
-              <a  href="<?php echo $fetch_link['item_link'] ?>" class="btn card_btn">view More</a>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <?php
+      $id = 0;
+      while ($id < 5) {
+        $id++;
+        $fetch_title = mysqli_query($conn, "SELECT  * from category WHERE category_id='$id'") or die('query failed');
+        if (mysqli_num_rows($fetch_title) > 0) {
+          $title = mysqli_fetch_assoc($fetch_title);
+
+      ?>
+          <p class="product-title"><?php echo $title['category_name'] ?></p>
+          <ul class="cards">
+            <?php
+            $query = "SELECT  * from item WHERE category_id =$id ORDER BY item_id DESC LIMIT 3";
+            $query_run = mysqli_query($conn, $query);
+            $fetch_data = mysqli_num_rows($query_run) > 0;
+            if ($fetch_data) {
+              while ($row = mysqli_fetch_assoc($query_run)) {
+
+            ?>
+                <li class="cards_item">
+                  <div class="card">
+                    <div class="card_image"><img src="products-img-upload/<?php echo $row['item_image'] ?>"></div>
+                    <div class="card_content">
+                      <h2 class="card_title"><?php echo $row['item_name'] ?></h2>
+                      <?php
+                      $product_id = $row['category_id'];
+                      $link = mysqli_query($conn, "SELECT * FROM `item_link` WHERE link_id = '$product_id'") or die('query failed');
+                      if (mysqli_num_rows($link) > 0) {
+                        $fetch_link = mysqli_fetch_assoc($link);
+                      }
+                      ?>
+                      <a href="<?php echo $fetch_link['item_link'] ?>" class="btn card_btn">view More</a>
+                    </div>
+                  </div>
+                </li>
+            <?php
+              }
+            }
+            ?>
+          </ul>
     </div>
-    <?php
+<?php
         }
       }
-      ?>
+?>
   </div>
 </body>
 
