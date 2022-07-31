@@ -391,7 +391,7 @@
         <div class="container">
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="addproduct.php">Add Product</a></li>
                     <li><a href="view.php">View Product</a></li>
                     <li><a href="slider.php">Add Slider</a></li>

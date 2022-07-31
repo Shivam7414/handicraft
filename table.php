@@ -417,7 +417,7 @@ require_once("./config/connection.php");
 
 <body>
   <?php require_once('navbar.php'); ?>
-  <p class="table-title" id="dining-table">Tables</p>
+  <p class="table-title" id="1">Tables</p>
   <div class="line"></div><br>
   <p class="table-type">Dining Table</p>
   <hr class="bar-table-line">
@@ -443,7 +443,7 @@ require_once("./config/connection.php");
               <div class="popup-card">
                 <a><i class="fas fa-times close-btn"></i></a>
                 <div class="product-img">
-                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
+                  <img src="pexels-life-of-pix-67468.jpg" alt="">
                 </div>
                 <div class="info">
                   <h2><?php echo $row['item_name'] ?></h2>
@@ -467,7 +467,7 @@ require_once("./config/connection.php");
 
 
   </div>
-  <p class="Bar-Table" id="bar-table">Bar table</p>
+  <p class="Bar-Table" id="2">Bar table</p>
   <hr class="Table-line">
   <div class="product-container table">
 
@@ -518,9 +518,147 @@ require_once("./config/connection.php");
   <hr class="Table-line">
   <div class="product-container  table">
 
-    <div class="container" id="dining-table">
+    <div class="container" id="3">
       <?php
       $query = "SELECT  * from item where product_id=3";
+      $query_run = mysqli_query($conn, $query);
+      $fetch_data = mysqli_num_rows($query_run) > 0;
+      if ($fetch_data) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+
+      ?>
+          <div class="product">
+            <div class="product-card">
+              <h2 class="name"><?php echo $row['item_name'] ?></h2>
+              <a class="popup-btn">Quick View</a>
+              <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
+            </div>
+            <div class="popup-view">
+              <div class="popup-card">
+                <a><i class="fas fa-times close-btn"></i></a>
+                <div class="product-img">
+                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
+                </div>
+                <div class="info">
+                  <h2><?php echo $row['item_name'] ?></h2>
+                  <h2><span>Description</span></h2>
+                  <p> <?php echo $row['item_desc'] ?></p>
+                  <h2><span>Size</span></h2>
+                  <p><?php echo $row['item_size'] ?></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      <?php
+        }
+      }
+      if (mysqli_num_rows($query_run) == 0) {
+        echo "<h1 class='error'> No result found</h1>";
+      }
+      ?>
+    </div>
+
+
+  </div>
+  <p class="Bar-Table">End Table</p>
+  <hr class="Table-line">
+  <div class="product-container  table">
+
+    <div class="container" id="9">
+      <?php
+      $query = "SELECT  * from item where product_id=9";
+      $query_run = mysqli_query($conn, $query);
+      $fetch_data = mysqli_num_rows($query_run) > 0;
+      if ($fetch_data) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+
+      ?>
+          <div class="product">
+            <div class="product-card">
+              <h2 class="name"><?php echo $row['item_name'] ?></h2>
+              <a class="popup-btn">Quick View</a>
+              <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
+            </div>
+            <div class="popup-view">
+              <div class="popup-card">
+                <a><i class="fas fa-times close-btn"></i></a>
+                <div class="product-img">
+                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
+                </div>
+                <div class="info">
+                  <h2><?php echo $row['item_name'] ?></h2>
+                  <h2><span>Description</span></h2>
+                  <p> <?php echo $row['item_desc'] ?></p>
+                  <h2><span>Size</span></h2>
+                  <p><?php echo $row['item_size'] ?></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      <?php
+        }
+      }
+      if (mysqli_num_rows($query_run) == 0) {
+        echo "<h1 class='error'> No result found</h1>";
+      }
+      ?>
+    </div>
+
+
+  </div>
+  <p class="Bar-Table">Round Coffee Table</p>
+  <hr class="Table-line">
+  <div class="product-container  table">
+
+    <div class="container" id="10">
+      <?php
+      $query = "SELECT  * from item where product_id=10";
+      $query_run = mysqli_query($conn, $query);
+      $fetch_data = mysqli_num_rows($query_run) > 0;
+      if ($fetch_data) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+
+      ?>
+          <div class="product">
+            <div class="product-card">
+              <h2 class="name"><?php echo $row['item_name'] ?></h2>
+              <a class="popup-btn">Quick View</a>
+              <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
+            </div>
+            <div class="popup-view">
+              <div class="popup-card">
+                <a><i class="fas fa-times close-btn"></i></a>
+                <div class="product-img">
+                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
+                </div>
+                <div class="info">
+                  <h2><?php echo $row['item_name'] ?></h2>
+                  <h2><span>Description</span></h2>
+                  <p> <?php echo $row['item_desc'] ?></p>
+                  <h2><span>Size</span></h2>
+                  <p><?php echo $row['item_size'] ?></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      <?php
+        }
+      }
+      if (mysqli_num_rows($query_run) == 0) {
+        echo "<h1 class='error'> No result found</h1>";
+      }
+      ?>
+    </div>
+
+
+  </div>
+  <p class="Bar-Table">Coffee Table</p>
+  <hr class="Table-line">
+  <div class="product-container  table">
+
+    <div class="container" id="11">
+      <?php
+      $query = "SELECT  * from item where product_id=11";
       $query_run = mysqli_query($conn, $query);
       $fetch_data = mysqli_num_rows($query_run) > 0;
       if ($fetch_data) {

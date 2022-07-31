@@ -7,7 +7,7 @@ require_once("./config/connection.php");
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Product Cards | With Quick Popup View</title>
+  <title> Decoratives Article</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
@@ -417,16 +417,14 @@ require_once("./config/connection.php");
 
 <body>
   <?php require_once('navbar.php'); ?>
-  <p class="table-title" id="4">Chairs</p>
+  <p class="table-title" id="12"> Decoratives Article</p>
   <div class="line"></div><br>
-  <p class="table-type">Dining Chair</p>
-  <hr class="bar-table-line">
 
   <div class="product-container">
 
     <div class="container">
       <?php
-      $query = "SELECT  * from item where product_id=4";
+      $query = "SELECT  * from item where product_id=23";
       $query_run = mysqli_query($conn, $query);
       $fetch_data = mysqli_num_rows($query_run) > 0;
       if ($fetch_data) {
@@ -467,127 +465,3 @@ require_once("./config/connection.php");
 
 
   </div>
-  <p class="Bar-Table" id="5">Bar Chair</p>
-  <hr class="Table-line">
-  <div class="product-container table">
-
-    <div class="container">
-
-      <?php
-      $query = "SELECT  * from item where product_id=5";
-      $query_run = mysqli_query($conn, $query);
-      $fetch_data = mysqli_num_rows($query_run) > 0;
-      if ($fetch_data) {
-        while ($row = mysqli_fetch_assoc($query_run)) {
-
-      ?>
-          <div class="product">
-            <div class="product-card">
-              <h2 class="name"><?php echo $row['item_name'] ?></h2>
-              <a class="popup-btn">Quick View</a>
-              <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
-            </div>
-            <div class="popup-view">
-              <div class="popup-card">
-                <a><i class="fas fa-times close-btn"></i></a>
-                <div class="product-img">
-                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
-                </div>
-                <div class="info">
-                  <h2><?php echo $row['item_name'] ?></h2>
-                  <h2><span>Description</span></h2>
-                  <p> <?php echo $row['item_desc'] ?></p>
-                  <h2><span>Size</span></h2>
-                  <p><?php echo $row['item_size'] ?></p>
-                </div>
-              </div>
-            </div>
-          </div>
-      <?php
-        }
-      }
-      if (mysqli_num_rows($query_run) == 0) {
-        echo "<h1 class='error'> No result found</h1>";
-      }
-      ?>
-    </div>
-
-
-  </div>
-  <p class="Bar-Table">Counter Chair</p>
-  <hr class="Table-line">
-  <div class="product-container  table">
-
-    <div class="container" id="6">
-      <?php
-      $query = "SELECT  * from item where product_id=6";
-      $query_run = mysqli_query($conn, $query);
-      $fetch_data = mysqli_num_rows($query_run) > 0;
-      if ($fetch_data) {
-        while ($row = mysqli_fetch_assoc($query_run)) {
-
-      ?>
-          <div class="product">
-            <div class="product-card">
-              <h2 class="name"><?php echo $row['item_name'] ?></h2>
-              <a class="popup-btn">Quick View</a>
-              <img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-img" alt="">
-            </div>
-            <div class="popup-view">
-              <div class="popup-card">
-                <a><i class="fas fa-times close-btn"></i></a>
-                <div class="product-img">
-                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
-                </div>
-                <div class="info">
-                  <h2><?php echo $row['item_name'] ?></h2>
-                  <h2><span>Description</span></h2>
-                  <p> <?php echo $row['item_desc'] ?></p>
-                  <h2><span>Size</span></h2>
-                  <p><?php echo $row['item_size'] ?></p>
-                </div>
-              </div>
-            </div>
-          </div>
-      <?php
-        }
-      }
-      if (mysqli_num_rows($query_run) == 0) {
-        echo "<h1 class='error'> No result found</h1>";
-      }
-      ?>
-    </div>
-
-
-  </div>
-
-
-  <script type="text/javascript">
-    var popupViews = document.querySelectorAll('.popup-view');
-    var popupBtns = document.querySelectorAll('.popup-btn');
-    var closeBtns = document.querySelectorAll('.close-btn');
-
-    //javascript for quick view button
-    var popup = function(popupClick) {
-      popupViews[popupClick].classList.add('active');
-    }
-
-    popupBtns.forEach((popupBtn, i) => {
-      popupBtn.addEventListener("click", () => {
-        popup(i);
-      });
-    });
-
-    //javascript for close button
-    closeBtns.forEach((closeBtn) => {
-      closeBtn.addEventListener("click", () => {
-        popupViews.forEach((popupView) => {
-          popupView.classList.remove('active');
-        });
-      });
-    });
-  </script>
-
-</body>
-
-</html>

@@ -417,16 +417,16 @@ require_once("./config/connection.php");
 
 <body>
   <?php require_once('navbar.php'); ?>
-  <p class="table-title" id="4">Chairs</p>
+  <p class="table-title" id="15">Bed</p>
   <div class="line"></div><br>
-  <p class="table-type">Dining Chair</p>
+  <p class="table-type">King Size Bed</p>
   <hr class="bar-table-line">
 
   <div class="product-container">
 
     <div class="container">
       <?php
-      $query = "SELECT  * from item where product_id=4";
+      $query = "SELECT  * from item where product_id=15";
       $query_run = mysqli_query($conn, $query);
       $fetch_data = mysqli_num_rows($query_run) > 0;
       if ($fetch_data) {
@@ -467,14 +467,14 @@ require_once("./config/connection.php");
 
 
   </div>
-  <p class="Bar-Table" id="5">Bar Chair</p>
+  <p class="Bar-Table" id="16">Queen Size Bed</p>
   <hr class="Table-line">
   <div class="product-container table">
 
     <div class="container">
 
       <?php
-      $query = "SELECT  * from item where product_id=5";
+      $query = "SELECT  * from item where product_id=16";
       $query_run = mysqli_query($conn, $query);
       $fetch_data = mysqli_num_rows($query_run) > 0;
       if ($fetch_data) {
@@ -514,13 +514,13 @@ require_once("./config/connection.php");
 
 
   </div>
-  <p class="Bar-Table">Counter Chair</p>
+  <!-- <p class="Bar-Table">Counter Table</p>
   <hr class="Table-line">
   <div class="product-container  table">
 
-    <div class="container" id="6">
+    <div class="container" id="1">
       <?php
-      $query = "SELECT  * from item where product_id=6";
+      $query = "SELECT  * from item where product_id=3";
       $query_run = mysqli_query($conn, $query);
       $fetch_data = mysqli_num_rows($query_run) > 0;
       if ($fetch_data) {
@@ -559,7 +559,7 @@ require_once("./config/connection.php");
     </div>
 
 
-  </div>
+  </div> -->
 
 
   <script type="text/javascript">

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Modern Dropdown Mega Menu Example</title>
+  <title>Candle Stand</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -271,9 +271,6 @@
         width: 40%;
       }
     }
-
-
-
   </style>
   <!-- Font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
@@ -308,74 +305,88 @@
             <div class="sub-menu">
               <!-- item -->
               <div class="sub-menu-item">
-                <a href="table.php"><h4>Tables</h4></a>
+                <a href="table.php">
+                  <h4>Tables</h4>
+                </a>
                 <ul>
                   <li><a href="table.php #dining-table">Dining Table</a></li>
                   <li><a href="table.php #bar-table">Bar Table</a></li>
-                  <li><a href="#">Counter Table</a></li>
-
+                  <li><a href="table.php #countertable">Counter Table</a></li>
+                  <li><a href="table.php #9"> End Table</a></li>
+                  <li><a href="table.php #10">Round Coffee Table</a></li>
+                  <li><a href="table.php #11"> Coffee Table</a></li>
                 </ul>
               </div>
 
               <div class="sub-menu-item">
-                <h4>Chairs</h4>
+                <a href="chair.php">
+                <h4>chair</h4>
+                </a>
                 <ul>
-                  <li><a href="#"> Dining Chair</a></li>
-                  <li><a href="#">Bar Chair</a></li>
-                  <li><a href="#">Counter Chair</a></li>
+                  <li><a href="chair.php #4"> Dining Chair</a></li>
+                  <li><a href="chair.php #5">Bar Chair</a></li>
+                  <li><a href="chair.php #6">Counter Chair</a></li>
 
                 </ul>
               </div>
+              
               <div class="sub-menu-item">
-                <h4>Book Racks</h4>
+              <a href="otherarticles.php">
+                <h4>Other Articles</h4>
+                </a>
                 <ul>
-                  <li><a href="#">Shoe Rack</a></li>
-                  <li><a href="#">Side Board with Glass or with wood</a></li>
-                  <li><a href="#"> End Table</a></li>
-                  <li><a href="#">Round Coffee Table</a></li>
-                  <li><a href="#"> Coffee Table</a></li>
+                  <li><a href="otherarticles.php #7">Shoe Rack</a></li>
+                  <li><a href="otherarticles.php #8">Side Board with Glass or with wood</a></li>
                 </ul>
               </div>
               <div class="sub-menu-item">
+                <a href="candlestand.php">
                 <h4>Candle Stand</h4>
+                </a>
                 <ul>
-                  <li><a href="#">Candle Stand</a></li>
+                  <li><a href="candlestand.php #12">Candle Stand</a></li>
 
                 </ul>
               </div>
               <div class="sub-menu-item">
-                <h4>Seater Sofa</h4>
+                <a href="sofa.php">
+                <h4>Sofa</h4>
+                </a>
                 <ul>
-                  <li><a href="#">1,2,3 Seater Sofa</a></li>
+                  <li><a href="sofa.php #13">1 Seater Sofa</a></li>
+                  <li><a href="sofa.php #17">2 Seater Sofa</a></li>
+                  <li><a href="sofa.php #19">3 Seater Sofa</a></li>
 
                 </ul>
               </div>
               <div class="sub-menu-item">
+                <a href="storagebox.php">
                 <h4>Storage Box</h4>
+                </a>
                 <ul>
-                  <li><a href="#">1,2,3 story Boxes</a></li>
+                  <li><a href="storagebox.php #14">1 story Boxes</a></li>
+                  <li><a href="storagebox.php #21">2 story Boxes</a></li>
+                  <li><a href="storagebox.php #22">3 story Boxes</a></li>
                 </ul>
               </div>
               <div class="sub-menu-item">
+                <a href="bed.php">
                 <h4>Bed</h4>
+                </a>
                 <ul>
-                  <li><a href="#">King Size Bed</a></li>
-                  <li><a href="#">Queen Size Bed</a></li>
+                  <li><a href="bed.php #15">King Size Bed</a></li>
+                  <li><a href="bed.php #16">Queen Size Bed</a></li>
                 </ul>
-              </div>
-
+              </div> 
 
           </li>
 
           <li>
-            <a href="#" class="menu-link">
+            <a href="decorative.php" class="menu-link">
               Decoratives Article
 
             </a>
 
-          </li>
-          <li>
-            <a href="#">deals</a>
           </li>
           <li>
             <a href="#">Contect Us</a>
@@ -385,7 +396,7 @@
     </nav>
 
   </div>
- 
+
 
 
   <!--jQuery-->
