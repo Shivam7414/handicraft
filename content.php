@@ -217,7 +217,7 @@ require_once("config/connection.php");
     <p class="title">Our Products</p>
     <p class="line"></p>
 <?php
-      $query = "SELECT  * from item INNER JOIN category ON item.product_id=category.category_id ORDER BY `item_id` DESC LIMIT 2";
+      $query = "SELECT  * from item INNER JOIN category ON item.category_id=category.category_id ORDER BY `item_id` DESC LIMIT 3";
       $query_run = mysqli_query($conn, $query);
       $fetch_data = mysqli_num_rows($query_run) > 0;
       if ($fetch_data) {
@@ -234,7 +234,7 @@ require_once("config/connection.php");
             <div class="card_content">
               <h2 class="card_title"><?php echo $row['item_name'] ?></h2>
               <?php
-              $product_id=$row['product_id'];
+              $product_id=$row['category_id'];
                 $link = mysqli_query($conn, "SELECT * FROM `item_link` WHERE link_id = '$product_id'") or die('query failed');
                 if (mysqli_num_rows($link) > 0) {
                   $fetch_link = mysqli_fetch_assoc($link);

@@ -1,14 +1,13 @@
 <?php
-require_once("./config/connection.php");
+require_once("config/connection.php");
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Decoratives Article</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>Document</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -69,6 +68,7 @@ require_once("./config/connection.php");
       z-index: 1;
       position: absolute;
       max-width: 290px;
+      max-height: 200px;
       top: 25%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -410,15 +410,20 @@ require_once("./config/connection.php");
       .Table-line {
         width: 400px;
       }
-
     }
+    #first-error{
+      position: relative;
+      top: 45px;
+    }
+  
   </style>
 </head>
-
 <body>
-  <?php require_once('navbar.php'); ?>
-  <p class="table-title" id="12"> Decoratives Article</p>
+<?php require_once('navbar.php'); ?>
+  <p class="table-title" id="23">Decoratives Article</p>
   <div class="line"></div><br>
+  <p class="table-type">Decoratives Article</p>
+  <hr class="bar-table-line">
 
   <div class="product-container">
 
@@ -441,7 +446,7 @@ require_once("./config/connection.php");
               <div class="popup-card">
                 <a><i class="fas fa-times close-btn"></i></a>
                 <div class="product-img">
-                  <img src="pexels-life-of-pix-67468.jpg" alt="">
+                  <img src="products-img-upload/<?php echo $row['item_image'] ?>" alt="">
                 </div>
                 <div class="info">
                   <h2><?php echo $row['item_name'] ?></h2>
@@ -457,7 +462,7 @@ require_once("./config/connection.php");
         }
       }
       if (mysqli_num_rows($query_run) == 0) {
-        echo "<h1 class='error'> No result found</h1>";
+        echo "<h1 class='error' id='first-error'> No result found</h1>";
       }
       ?>
 
@@ -465,3 +470,30 @@ require_once("./config/connection.php");
 
 
   </div>
+  <script type="text/javascript">
+        var popupViews = document.querySelectorAll('.popup-view');
+        var popupBtns = document.querySelectorAll('.popup-btn');
+        var closeBtns = document.querySelectorAll('.close-btn');
+
+        //javascript for quick view button
+        var popup = function(popupClick) {
+            popupViews[popupClick].classList.add('active');
+        }
+
+        popupBtns.forEach((popupBtn, i) => {
+            popupBtn.addEventListener("click", () => {
+                popup(i);
+            });
+        });
+
+        //javascript for close button
+        closeBtns.forEach((closeBtn) => {
+            closeBtn.addEventListener("click", () => {
+                popupViews.forEach((popupView) => {
+                    popupView.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

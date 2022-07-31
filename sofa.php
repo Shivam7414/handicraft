@@ -69,6 +69,7 @@ require_once("./config/connection.php");
             z-index: 1;
             position: absolute;
             max-width: 290px;
+            max-height: 200px;
             top: 25%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -412,6 +413,10 @@ require_once("./config/connection.php");
             }
 
         }
+        .first-error{
+      position: relative;
+      top: 45px;
+    }
     </style>
 </head>
 
@@ -459,7 +464,7 @@ require_once("./config/connection.php");
                 }
             }
             if (mysqli_num_rows($query_run) == 0) {
-                echo "<h1 class='error'> No result found</h1>";
+                echo "<h1 class='error first-error'> No result found</h1>";
             }
             ?>
 

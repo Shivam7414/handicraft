@@ -2,7 +2,8 @@
 require_once("../config/connection.php");
 $category_id=null;
 if (isset($_POST['getvalue'])){
-    $category_id=$_POST['category'];
+    $category_id=$_POST['product-name'];
+    echo $category_id;
 }
 
 ?>
@@ -95,26 +96,29 @@ if (isset($_POST['getvalue'])){
                             <td scope="row"><?php echo $row['item_name'] ?></td>
                             <td>
                             <?php
-                            if($row['product_id']==1){
+                            if($row['category_id']==1){
                                 echo "Table";
                             } 
-                            elseif($row['product_id']==2){
+                            elseif($row['category_id']==2){
                                 echo "Chair";
                             }
-                            elseif($row['product_id']==3){
+                            elseif($row['category_id']==3){
                                 echo "Book Racks";
                             }
-                            elseif($row['product_id']==4){
+                            elseif($row['category_id']==4){
                                 echo "Candle Stand";
                             }
-                            elseif($row['product_id']==5){
+                            elseif($row['category_id']==5){
                                 echo "Seater Sofa";
                             }
-                            elseif($row['product_id']==6){
+                            elseif($row['category_id']==6){
                                 echo "Storage Box";
                             }
-                            elseif($row['product_id']==7){
+                            elseif($row['category_id']==7){
                                 echo "Bed";
+                            }
+                            elseif($row['category_id']==8){
+                                echo "Decoratives Article";
                             }
                             ?></td>                       
                             <td><a class="btn btn-primary" onclick="return confirm('Are you sure?')" href="deleteproduct.php?itemid=<?php echo $row['item_id']; ?>" role="button">Delete</a></td>

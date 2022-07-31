@@ -14,7 +14,7 @@ if (isset($_POST['Insertdata'])) {
   $tmpname=$file['tmp_name'];
   $path="../products-img-upload/".$name;
   $insert_query = mysqli_query($conn, "INSERT INTO `item`(`item_name`, `item_desc`, `item_size`, `item_image`, `product_id`, `category_id`)
-   VALUES ('$title','$description','$size','$name','$product_name','$product_category')") or die("Query failed");
+   VALUES ('$title','$description','$size','$name','$product_category','$product_name')") or die("Query failed");
   if ($insert_query) {
     move_uploaded_file($tmpname, $path); 
     echo "<script> 
