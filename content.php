@@ -220,7 +220,7 @@ require_once("config/connection.php");
     <div class="main">
       <?php
       $id = 0;
-      while ($id < 5) {
+      while ($id < 9) {
         $id++;
         $fetch_title = mysqli_query($conn, "SELECT  * from category WHERE category_id='$id'") or die('query failed');
         if (mysqli_num_rows($fetch_title) > 0) {
