@@ -121,7 +121,7 @@ require_once("config/connection.php");
       text-align: center;
     }
 
-    img {
+    .product-image {
       height: auto;
       max-width: 100%;
       vertical-align: middle;
@@ -222,24 +222,34 @@ require_once("config/connection.php");
       $id = 0;
       while ($id < 9) {
         $id++;
-        $fetch_title = mysqli_query($conn, "SELECT  * from category WHERE category_id='$id'") or die('query failed');
-        if (mysqli_num_rows($fetch_title) > 0) {
-          $title = mysqli_fetch_assoc($fetch_title);
+       
+       
 
       ?>
-          <p class="product-title"><?php echo $title['category_name'] ?></p>
+          <?php
+          $query = "SELECT  * from item WHERE category_id =$id ORDER BY item_id DESC LIMIT 3";
+          $query_run = mysqli_query($conn, $query);
+          $fetch_data = mysqli_num_rows($query_run) > 0;
+          
+          if($fetch_data>0){
+          $fetch_title = mysqli_query($conn, "SELECT  * from category WHERE category_id='$id'") or die('query failed');
+          if (mysqli_num_rows($fetch_title) > 0) {
+            $title = mysqli_fetch_assoc($fetch_title);
+          }
+           echo "<p class='product-title'>". $title['category_name']. "</p>";
+        }
+        
+          ?>
+          
           <ul class="cards">
             <?php
-            $query = "SELECT  * from item WHERE category_id =$id ORDER BY item_id DESC LIMIT 3";
-            $query_run = mysqli_query($conn, $query);
-            $fetch_data = mysqli_num_rows($query_run) > 0;
             if ($fetch_data) {
               while ($row = mysqli_fetch_assoc($query_run)) {
 
             ?>
                 <li class="cards_item">
                   <div class="card">
-                    <div class="card_image"><img src="products-img-upload/<?php echo $row['item_image'] ?>"></div>
+                    <div class="card_image"><img src="products-img-upload/<?php echo $row['item_image'] ?>" class="product-image"></div>
                     <div class="card_content">
                       <h2 class="card_title"><?php echo $row['item_name'] ?></h2>
                       <?php
@@ -261,7 +271,7 @@ require_once("config/connection.php");
     </div>
 <?php
         }
-      }
+      
 ?>
   </div>
 </body>
