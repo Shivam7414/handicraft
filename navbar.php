@@ -283,7 +283,7 @@
   <div class="main-wrapper">
     <nav class="navbar">
       <div class="brand-and-icon">
-        <a href="index.html" class="navbar-brand">HandiCraft</a>
+        <a href="index.php" class="navbar-brand">HandiCraft</a>
         <button type="button" class="navbar-toggler">
           <i class="fas fa-bars"></i>
         </button>
@@ -320,7 +320,7 @@
 
               <div class="sub-menu-item">
                 <a href="chair.php">
-                <h4>chair</h4>
+                  <h4>chair</h4>
                 </a>
                 <ul>
                   <li><a href="chair.php #4"> Dining Chair</a></li>
@@ -329,10 +329,10 @@
 
                 </ul>
               </div>
-              
+
               <div class="sub-menu-item">
-              <a href="otherarticles.php">
-                <h4>Other Articles</h4>
+                <a href="otherarticles.php">
+                  <h4>Other Articles</h4>
                 </a>
                 <ul>
                   <li><a href="otherarticles.php #7">Shoe Rack</a></li>
@@ -341,7 +341,7 @@
               </div>
               <div class="sub-menu-item">
                 <a href="candlestand.php">
-                <h4>Candle Stand</h4>
+                  <h4>Candle Stand</h4>
                 </a>
                 <ul>
                   <li><a href="candlestand.php #12">Candle Stand</a></li>
@@ -350,7 +350,7 @@
               </div>
               <div class="sub-menu-item">
                 <a href="sofa.php">
-                <h4>Sofa</h4>
+                  <h4>Sofa</h4>
                 </a>
                 <ul>
                   <li><a href="sofa.php #13">1 Seater Sofa</a></li>
@@ -361,7 +361,7 @@
               </div>
               <div class="sub-menu-item">
                 <a href="storagebox.php">
-                <h4>Storage Box</h4>
+                  <h4>Storage Box</h4>
                 </a>
                 <ul>
                   <li><a href="storagebox.php #14">1 story Boxes</a></li>
@@ -371,13 +371,13 @@
               </div>
               <div class="sub-menu-item">
                 <a href="bed.php">
-                <h4>Bed</h4>
+                  <h4>Bed</h4>
                 </a>
                 <ul>
                   <li><a href="bed.php #15">King Size Bed</a></li>
                   <li><a href="bed.php #16">Queen Size Bed</a></li>
                 </ul>
-              </div> 
+              </div>
 
           </li>
 
